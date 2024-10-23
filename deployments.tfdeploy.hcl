@@ -8,6 +8,7 @@ identity_token "aws" {
 store "varset" "kazuemasaki" {
   id       = "varset-QuUCQ6vdmQCbuocx"
   category = "terraform"
+}
 
 deployment "development" {
   inputs = {
