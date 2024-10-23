@@ -19,7 +19,3 @@ variable "default_tags" {
   type        = map(string)
   default     = {}
 }
-
-variable "account_id" {
-  type = string
-}
