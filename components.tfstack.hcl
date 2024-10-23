@@ -50,3 +50,17 @@ component "api_gateway" {
     random = provider.random.this
   }
 }
+
+
+removed {
+  source = "./s3"
+
+  for_each = var.removed_regions
+
+  from = component.s3[each.value]
+
+  providers = {
+    aws = provider.aws.configurations[each.value]
+    random = provider.random.this
+  }
+}

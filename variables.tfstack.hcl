@@ -5,6 +5,10 @@ variable "regions" {
   type = set(string)
 }
 
+variable "removed_regions" {
+  type = set(string)
+}
+
 variable "identity_token" {
   type      = string
   ephemeral = true

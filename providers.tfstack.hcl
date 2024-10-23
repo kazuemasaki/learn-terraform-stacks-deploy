@@ -24,7 +24,7 @@ required_providers {
 }
 
 provider "aws" "configurations" {
-  for_each = var.regions
+  for_each = (contains(var.removed_regions, "")) ? var.regions : setunion(var.regions,var.removed_regions)
 
   config {
     region = each.value
