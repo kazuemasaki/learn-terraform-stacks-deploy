@@ -19,3 +19,11 @@ variable "default_tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "account_id" {
+  type = string
+  validation {
+    condition     = can(regex("^[0-9]{12}$", var.customer_service_account_id))
+    error_message = "Invalid accountID."
+  }  
+}
